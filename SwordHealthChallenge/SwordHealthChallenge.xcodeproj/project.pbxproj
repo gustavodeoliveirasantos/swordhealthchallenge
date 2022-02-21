@@ -19,6 +19,13 @@
 		1C98A6F627C43914008AD016 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6F527C43914008AD016 /* ListViewController.swift */; };
 		1C98A6F827C43954008AD016 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6F727C43954008AD016 /* SearchViewController.swift */; };
 		1C98A6FA27C43965008AD016 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6F927C43965008AD016 /* DetailViewController.swift */; };
+		1C98A6FD27C44039008AD016 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6FC27C44039008AD016 /* UseCase.swift */; };
+		1C98A6FF27C4406B008AD016 /* GetDogBreedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6FE27C4406B008AD016 /* GetDogBreedUseCase.swift */; };
+		1C98A70527C440F1008AD016 /* DogBreedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A70427C440F1008AD016 /* DogBreedRepository.swift */; };
+		1C98A70727C44133008AD016 /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A70627C44133008AD016 /* DogBreed.swift */; };
+		1C98A70C27C4418A008AD016 /* DogBreedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A70B27C4418A008AD016 /* DogBreedStore.swift */; };
+		1C98A70E27C441C6008AD016 /* DogBreedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A70D27C441C6008AD016 /* DogBreedService.swift */; };
+		1C98A71027C44484008AD016 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A70F27C44484008AD016 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,13 @@
 		1C98A6F527C43914008AD016 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1C98A6F727C43954008AD016 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1C98A6F927C43965008AD016 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1C98A6FC27C44039008AD016 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		1C98A6FE27C4406B008AD016 /* GetDogBreedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDogBreedUseCase.swift; sourceTree = "<group>"; };
+		1C98A70427C440F1008AD016 /* DogBreedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedRepository.swift; sourceTree = "<group>"; };
+		1C98A70627C44133008AD016 /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
+		1C98A70B27C4418A008AD016 /* DogBreedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedStore.swift; sourceTree = "<group>"; };
+		1C98A70D27C441C6008AD016 /* DogBreedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedService.swift; sourceTree = "<group>"; };
+		1C98A70F27C44484008AD016 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +170,8 @@
 		1C98A6ED27C43735008AD016 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1C98A6FC27C44039008AD016 /* UseCase.swift */,
+				1C98A6FB27C44023008AD016 /* DogsRepo */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -163,6 +179,10 @@
 		1C98A6EE27C43740008AD016 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1C98A70027C4409D008AD016 /* Repository */,
+				1C98A70227C440AD008AD016 /* Model */,
+				1C98A70127C440A8008AD016 /* Service */,
+				1C98A70327C440B5008AD016 /* Store */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				1C98A6F527C43914008AD016 /* ListViewController.swift */,
+				1C98A70F27C44484008AD016 /* ListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -198,6 +219,46 @@
 				1C98A6F927C43965008AD016 /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		1C98A6FB27C44023008AD016 /* DogsRepo */ = {
+			isa = PBXGroup;
+			children = (
+				1C98A6FE27C4406B008AD016 /* GetDogBreedUseCase.swift */,
+			);
+			path = DogsRepo;
+			sourceTree = "<group>";
+		};
+		1C98A70027C4409D008AD016 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1C98A70427C440F1008AD016 /* DogBreedRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1C98A70127C440A8008AD016 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1C98A70D27C441C6008AD016 /* DogBreedService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1C98A70227C440AD008AD016 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C98A70627C44133008AD016 /* DogBreed.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C98A70327C440B5008AD016 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				1C98A70B27C4418A008AD016 /* DogBreedStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,10 +392,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C98A6F827C43954008AD016 /* SearchViewController.swift in Sources */,
+				1C98A70727C44133008AD016 /* DogBreed.swift in Sources */,
+				1C98A71027C44484008AD016 /* ListViewModel.swift in Sources */,
+				1C98A6FD27C44039008AD016 /* UseCase.swift in Sources */,
+				1C98A70C27C4418A008AD016 /* DogBreedStore.swift in Sources */,
+				1C98A6FF27C4406B008AD016 /* GetDogBreedUseCase.swift in Sources */,
 				1C98A6C027C43540008AD016 /* MainViewController.swift in Sources */,
+				1C98A70E27C441C6008AD016 /* DogBreedService.swift in Sources */,
 				1C98A6F127C437F4008AD016 /* MainCoordinator.swift in Sources */,
 				1C98A6BC27C43540008AD016 /* AppDelegate.swift in Sources */,
 				1C98A6F627C43914008AD016 /* ListViewController.swift in Sources */,
+				1C98A70527C440F1008AD016 /* DogBreedRepository.swift in Sources */,
 				1C98A6BE27C43540008AD016 /* SceneDelegate.swift in Sources */,
 				1C98A6FA27C43965008AD016 /* DetailViewController.swift in Sources */,
 			);
