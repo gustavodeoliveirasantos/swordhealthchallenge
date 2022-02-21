@@ -56,8 +56,8 @@ public class MainCoordinator: Coordinator {
         return navigationController
     }
     
-    private func goToDetailPage(controller: UIViewController, item: Any) {
-        let detailViewController = DetailViewController()
+    private func goToDetailPage(controller: UIViewController, item: DogBreed) {
+        let detailViewController = DetailViewController(with: item)
         controller.navigationController?.pushViewController(detailViewController, animated: true)
         
     }
@@ -65,12 +65,12 @@ public class MainCoordinator: Coordinator {
 
 //DELEGATES
 extension MainCoordinator: ListViewControllerDelegate, SearchViewControllerDelegate {
-    func listViewControllerDidTappedItem(controller: ListViewController, item: Any) {
+    func listViewControllerDidTappedItem(controller: ListViewController, item: DogBreed) {
         goToDetailPage(controller: controller, item: item)
-        
     }
     
-    func searchViewControllerDidTappedItem(controller: SearchViewController, item: Any)
+
+    func searchViewControllerDidTappedItem(controller: SearchViewController, item: DogBreed)
     {   goToDetailPage(controller: controller, item: item)
     }
     

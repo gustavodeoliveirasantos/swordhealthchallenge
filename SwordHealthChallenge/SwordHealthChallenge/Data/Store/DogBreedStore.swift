@@ -12,22 +12,20 @@ public protocol Store {
 }
 
 public protocol DogBreedStore {
-    
+    func load() -> [DogBreed]?
+    func save(items: [DogBreed])
 }
 
-final class DogBreedStoreImpl: Store, DogBreedStore {
-    //    typealias StorableObject = String
-    //
-    //    func get() -> String {
-    //        <#code#>
-    //    }
-    //
-    //    func load(test: String) -> Bool {
-    //        <#code#>
-    //    }
-    //
+final class DogBreedStoreImpl: DogBreedStore {
+    private var items: [DogBreed]?
     
-    
-    
+    static let shared = DogBreedStoreImpl()
+   
+    func load() -> [DogBreed]? {
+        return items
+    }
+    func save(items: [DogBreed]) {
+        self.items = items
+    }
 }
 

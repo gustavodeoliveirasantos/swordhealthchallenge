@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 protocol SearchViewControllerDelegate: AnyObject {
-    func searchViewControllerDidTappedItem(controller: SearchViewController, item: Any)
+    func searchViewControllerDidTappedItem(controller: SearchViewController, item: DogBreed)
 }
 
 class SearchViewController: UIViewController {

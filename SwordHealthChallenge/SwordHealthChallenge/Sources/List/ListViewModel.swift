@@ -2,13 +2,15 @@ import Foundation
 protocol ListViewModelProtocol {
     var outputEvents: ListViewModel.OutputEvents { get set }
     func loadData()
+    func sortData()
 }
 
 
 public class ListViewModel: ListViewModelProtocol {
     
     let getDogBreedUseCase: GetDogBreedUseCase
-    var repoInfo: [DogBreed] = []
+    var dogBreedList: [DogBreed] = []
+    var isOrdered: Bool = true
     
     struct OutputEvents {
         var didLoadData: (([DogBreed]) -> Void)?
@@ -29,6 +31,7 @@ public class ListViewModel: ListViewModelProtocol {
              switch result {
              case .success(let data):
                  guard let data = data else { return }
+                 self.dogBreedList = data
                  self.outputEvents.didLoadData?(data)
                  self.outputEvents.displayLoading?(false)
              case .failure(let error):
@@ -36,6 +39,18 @@ public class ListViewModel: ListViewModelProtocol {
                  self.outputEvents.loadDataError?()
              }
          }
+    }
+    
+    func sortData() {
+        var dogBreedListSorted: [DogBreed]
+        if isOrdered {
+            dogBreedListSorted = dogBreedList.sorted { $0.name > $1.name }
+        } else {
+            dogBreedListSorted = dogBreedList.sorted { $0.name < $1.name }
+        }
+        isOrdered.toggle()
+       
+        self.outputEvents.didLoadData?(dogBreedListSorted)
     }
    
 }

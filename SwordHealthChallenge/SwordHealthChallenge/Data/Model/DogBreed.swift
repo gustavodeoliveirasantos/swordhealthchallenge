@@ -3,7 +3,7 @@ import Foundation
 
 public struct DogBreed: Decodable, Hashable {
     let id: Int
-    let name: String?
+    let name: String
     let origin: String?
     let breed_group: String?
     let image: DogBreedImage?
