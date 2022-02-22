@@ -1,10 +1,10 @@
 import Foundation
 
-public protocol GetDogBreedUseCase {
+public protocol SearchDogBreedUseCase {
     func execute(_ filter: String?, callback: @escaping (Result<[DogBreed]?, Error >) -> Void)
 }
 
-final class GetDogBreedUseCaseImpl: UseCase, GetDogBreedUseCase {
+final class SearchDogBreedUseCaseImpl: UseCase, SearchDogBreedUseCase {
     private let repository: DogBreedRepository
     
     init (repository: DogBreedRepository =  DogBreedRepositoryImpl()) {
@@ -12,6 +12,6 @@ final class GetDogBreedUseCaseImpl: UseCase, GetDogBreedUseCase {
     }
     
     func execute(_ filter: String?, callback: @escaping (Result<[DogBreed]?, Error>) -> Void) {
-        repository.getDogBreedData(completion: callback)
+        repository.searchData(filter: filter, completion: callback)
     }
 }

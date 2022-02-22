@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C8C3B9D27C57493005B87FD /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C3B9C27C57493005B87FD /* SearchCollectionViewCell.swift */; };
+		1C8C3B9F27C57669005B87FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C3B9E27C57669005B87FD /* SearchViewModel.swift */; };
+		1C8C3BA127C58ECD005B87FD /* SearchDogBreedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C3BA027C58ECC005B87FD /* SearchDogBreedUseCase.swift */; };
+		1C8C3BA327C58EE0005B87FD /* GetImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C3BA227C58EE0005B87FD /* GetImageUseCase.swift */; };
+		1C8C3BA527C593CF005B87FD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C3BA427C593CF005B87FD /* DetailViewModel.swift */; };
 		1C98A6BC27C43540008AD016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6BB27C43540008AD016 /* AppDelegate.swift */; };
 		1C98A6BE27C43540008AD016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6BD27C43540008AD016 /* SceneDelegate.swift */; };
 		1C98A6C027C43540008AD016 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98A6BF27C43540008AD016 /* MainViewController.swift */; };
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C8C3B9C27C57493005B87FD /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C8C3B9E27C57669005B87FD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1C8C3BA027C58ECC005B87FD /* SearchDogBreedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDogBreedUseCase.swift; sourceTree = "<group>"; };
+		1C8C3BA227C58EE0005B87FD /* GetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageUseCase.swift; sourceTree = "<group>"; };
+		1C8C3BA427C593CF005B87FD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		1C98A6B827C43540008AD016 /* SwordHealthChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwordHealthChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C98A6BB27C43540008AD016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C98A6BD27C43540008AD016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				1C98A6F727C43954008AD016 /* SearchViewController.swift */,
+				1C8C3B9C27C57493005B87FD /* SearchCollectionViewCell.swift */,
+				1C8C3B9E27C57669005B87FD /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -223,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1C98A6F927C43965008AD016 /* DetailViewController.swift */,
+				1C8C3BA427C593CF005B87FD /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -231,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				1C98A6FE27C4406B008AD016 /* GetDogBreedUseCase.swift */,
+				1C8C3BA027C58ECC005B87FD /* SearchDogBreedUseCase.swift */,
+				1C8C3BA227C58EE0005B87FD /* GetImageUseCase.swift */,
 			);
 			path = DogsRepo;
 			sourceTree = "<group>";
@@ -411,12 +426,17 @@
 				1C98A71027C44484008AD016 /* ListViewModel.swift in Sources */,
 				1C98A6FD27C44039008AD016 /* UseCase.swift in Sources */,
 				1C98A70C27C4418A008AD016 /* DogBreedStore.swift in Sources */,
+				1C8C3B9F27C57669005B87FD /* SearchViewModel.swift in Sources */,
 				1C98A6FF27C4406B008AD016 /* GetDogBreedUseCase.swift in Sources */,
+				1C8C3BA327C58EE0005B87FD /* GetImageUseCase.swift in Sources */,
 				1C98A6C027C43540008AD016 /* MainViewController.swift in Sources */,
 				1C98A70E27C441C6008AD016 /* DogBreedService.swift in Sources */,
+				1C8C3BA127C58ECD005B87FD /* SearchDogBreedUseCase.swift in Sources */,
 				1C98A6F127C437F4008AD016 /* MainCoordinator.swift in Sources */,
 				1C98A71527C44C48008AD016 /* ListCollectionViewCell.swift in Sources */,
+				1C8C3B9D27C57493005B87FD /* SearchCollectionViewCell.swift in Sources */,
 				1C98A6BC27C43540008AD016 /* AppDelegate.swift in Sources */,
+				1C8C3BA527C593CF005B87FD /* DetailViewModel.swift in Sources */,
 				1C98A6F627C43914008AD016 /* ListViewController.swift in Sources */,
 				1C98A70527C440F1008AD016 /* DogBreedRepository.swift in Sources */,
 				1C98A6BE27C43540008AD016 /* SceneDelegate.swift in Sources */,

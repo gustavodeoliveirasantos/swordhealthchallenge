@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 public class DetailViewController: UIViewController {
-    
-    private let dogBreed: DogBreed
+    private var viewModel: DetailViewModelProtocol
     private var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "placeholder_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -24,7 +24,7 @@ public class DetailViewController: UIViewController {
         nameLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
         return nameLabel
     }()
-    private var groupLabel: UILabel = {
+    private var categoryLabel: UILabel = {
         let groupLabel = UILabel()
         groupLabel.translatesAutoresizingMaskIntoConstraints = false
         groupLabel.textColor = .black
@@ -32,7 +32,7 @@ public class DetailViewController: UIViewController {
         return groupLabel
     }()
     
-    private var originLabel: UILabel = {
+    private var temperamentLabel: UILabel = {
         let originLabel = UILabel()
         originLabel.translatesAutoresizingMaskIntoConstraints = false
         originLabel.textColor = .black
@@ -41,10 +41,12 @@ public class DetailViewController: UIViewController {
         return originLabel
     }()
     
-    init(with dogBreed: DogBreed) {
-        self.dogBreed = dogBreed
+    init(viewModel: DetailViewModelProtocol) {
+ 
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -52,23 +54,33 @@ public class DetailViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupListeners()
         setupLayout()
+        viewModel.loadImageIfNeeded()
      
     }
     
+    
+    private func setupListeners() {
+        viewModel.outputEvents.didLoadImage = { [weak self] data in
+            self?.imageView.loadImage(from: data?.url)
+        }
+    }
+    
+    
+    
     private func setupLayout() {
         self.view.backgroundColor = .white
-        imageView.loadImage(from: dogBreed.image?.url)
+        imageView.loadImage(from: viewModel.dogBreed.image?.url)
         
-        nameLabel.text = dogBreed.name
-        groupLabel.text = "Group: \(dogBreed.breed_group ?? "unknown")"
-        originLabel.text = "Origin: \(dogBreed.origin ?? "unknown")"
+        nameLabel.text = viewModel.dogBreed.name
+        categoryLabel.text = "Group: \(viewModel.dogBreed.breed_group ?? "unknown")"
+        temperamentLabel.text = "Temperament: \(viewModel.dogBreed.temperament ?? "unknown")"
         
         view.addSubview(imageView)
         view.addSubview(nameLabel)
-        view.addSubview(groupLabel)
-        view.addSubview(originLabel)
+        view.addSubview(categoryLabel)
+        view.addSubview(temperamentLabel)
         
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -80,13 +92,13 @@ public class DetailViewController: UIViewController {
             nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
-            groupLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-            groupLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            groupLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            categoryLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            categoryLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            categoryLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
-            originLabel.topAnchor.constraint(equalTo: groupLabel.bottomAnchor, constant: 10),
-            originLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            originLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+            temperamentLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 10),
+            temperamentLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            temperamentLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
           
         ])
     

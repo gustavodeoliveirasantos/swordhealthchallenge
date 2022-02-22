@@ -57,7 +57,8 @@ public class MainCoordinator: Coordinator {
     }
     
     private func goToDetailPage(controller: UIViewController, item: DogBreed) {
-        let detailViewController = DetailViewController(with: item)
+        let viewModel = DetailViewModel(dogBreed: item)
+        let detailViewController = DetailViewController(viewModel: viewModel)
         controller.navigationController?.pushViewController(detailViewController, animated: true)
         
     }

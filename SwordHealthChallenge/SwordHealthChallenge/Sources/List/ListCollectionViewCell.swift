@@ -7,6 +7,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "placeholder_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -24,6 +25,10 @@ class ListCollectionViewCell: UICollectionViewCell {
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        imageView.image = UIImage(named: "placeholder_image")
     }
     private func setupLayout () {
         
@@ -50,7 +55,8 @@ class ListCollectionViewCell: UICollectionViewCell {
         }
         
         nameLabel.text = name
-        imageView.image = nil
+       
         imageView.loadImage(from: imageURL)
     }
+    
 }
